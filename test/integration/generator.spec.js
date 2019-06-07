@@ -52,4 +52,6 @@ try {
 		console.log(chalk.blue('\n> Cleaning...\n'));
 		cleanup();
 	}
+
+	setTimeout(() => {}, 1500);
 }
