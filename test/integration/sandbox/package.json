@@ -1,0 +1,14 @@
+{
+  "name": "generator-trigen-lib-sandbox",
+  "version": "0.0.0",
+  "description": "",
+  "author": "dangreen",
+  "license": "MIT",
+  "scripts": {
+    "yo": "yo trigen-lib"
+  },
+  "dependencies": {
+    "yo": "*",
+    "generator-trigen-lib": "../../../"
+  }
+}

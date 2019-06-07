@@ -1,0 +1,21 @@
+{
+  "generator-trigen-lib": {
+    "editPackage": true,
+    "pkg": {
+      "name": "my-lib",
+      "version": "1.0.0",
+      "description": "My test lib",
+      "repository": "https://github.com/Trigen/my-lib",
+      "author": "dangreen"
+    },
+    "type": "browser",
+    "lang": "babel",
+    "rollup": true,
+    "jest": true,
+    "coverage": true,
+    "publishAsRoot": false,
+    "cleanPublish": true,
+    "checkSize": true,
+    "gitInit": false
+  }
+}

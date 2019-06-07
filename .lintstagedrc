@@ -1,0 +1,3 @@
+{
+	"src/**/*.js": ["trigen-scripts lint", "git add"]
+}
