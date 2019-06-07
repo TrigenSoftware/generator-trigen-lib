@@ -39,7 +39,7 @@ try {
 
 	console.log(chalk.blue('\n> Generating...\n'));
 
-	execSync(`yarn yo my-lib -S`, {
+	execSync(`yarn yo my-lib -S --skip-install`, {
 		stdio: 'inherit',
 		cwd:   SANDBOX_PATH
 	});
