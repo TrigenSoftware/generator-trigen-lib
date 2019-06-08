@@ -5,12 +5,14 @@ export function render({
 	pkg: {
 		name,
 		description,
-		repository
+		repository,
+		peerDependencies
 	},
 	type,
 	coverage
 }) {
 
+	const isConfig = type === 'config';
 	const isNode = type === 'node';
 	const shieldName = repository.replace(/.*\/\/[^/]*\//, '');
 
@@ -18,8 +20,9 @@ export function render({
 # ${name}
 
 [![NPM version][npm]][npm-url]
-${!isNode ? '' : '[![Node version][node]][node-url]\n'}\
-[![Dependency status][deps]][deps-url]
+${!isNode && !isConfig ? '' : '[![Node version][node]][node-url]\n'}\
+${!peerDependencies ? '' : '[![Peer dependencies status][peer-deps]][peer-deps-url]\n'}\
+[![Dependencies status][deps]][deps-url]
 [![Build status][build]][build-url]
 ${!coverage ? '' : '[![Coverage status][coverage]][coverage-url]\n'}\
 [![Greenkeeper badge][greenkeeper]][greenkeeper-url]
@@ -27,9 +30,14 @@ ${!coverage ? '' : '[![Coverage status][coverage]][coverage-url]\n'}\
 [npm]: https://img.shields.io/npm/v/${name}.svg
 [npm-url]: https://npmjs.com/package/${name}
 \
-${!isNode ? '' : `
+${!isNode && !isConfig ? '' : `
 [node]: https://img.shields.io/node/v/${name}.svg
 [node-url]: https://nodejs.org
+`}\
+\
+${!peerDependencies ? '' : `
+[peer-deps]: https://david-dm.org/${shieldName}/peer-status.svg
+[peer-deps-url]: https://david-dm.org/${shieldName}?type=peer
 `}\
 
 [deps]: https://david-dm.org/${shieldName}.svg

@@ -72,15 +72,9 @@ export function render({
 		};
 	}
 
-	if (isConfig) {
-		packageJson.scripts = {
-			lint: 'trigen-scripts lint \'**/*.js\''
-		};
-	} else {
-		packageJson.scripts = {
-			lint: 'trigen-scripts lint'
-		};
-	}
+	packageJson.scripts = {
+		lint: 'trigen-scripts lint'
+	};
 
 	if (jest) {
 		packageJson.scripts.jest = 'trigen-scripts jest';
@@ -90,11 +84,7 @@ export function render({
 		packageJson.scripts.checkSize = 'trigen-scripts checkSize';
 	}
 
-	if (isConfig) {
-		packageJson.scripts.test = 'trigen-scripts test \'**/*.js\'';
-	} else {
-		packageJson.scripts.test = 'trigen-scripts test';
-	}
+	packageJson.scripts.test = 'trigen-scripts test';
 
 	if (isTS) {
 		packageJson.scripts['build:docs'] = 'trigen-scripts build:docs';
