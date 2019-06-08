@@ -12,6 +12,18 @@ export function render({
 
 	switch (type) {
 
+		case 'config':
+			eslint = {
+				extends: 'trigen/base',
+				env:     {
+					node: true
+				},
+				rules:   {
+					'import/unambiguous': 'off'
+				}
+			};
+			break;
+
 		case 'node':
 			eslint.env = {
 				node: true

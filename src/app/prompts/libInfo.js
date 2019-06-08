@@ -4,6 +4,10 @@ import {
 
 const types = [
 	{
+		name:  'config',
+		value: 'config'
+	},
+	{
 		name:  'for node',
 		value: 'node'
 	},
@@ -43,7 +47,7 @@ export default async function askForLibInfo(generator, props) {
 
 	generator.log('Library info:');
 
-	let libInfoPrompts = [{
+	const result = await generator.prompt([{
 		type:    'list',
 		name:    'type',
 		message: 'What kind of library it is?',
@@ -52,17 +56,23 @@ export default async function askForLibInfo(generator, props) {
 			[props, 'type', indexOfType],
 			0
 		)
-	}, {
-		type:    'list',
-		name:    'lang',
-		message: 'Which language you want to use?',
-		choices: langs,
-		default: getValue(
-			[props, 'lang', indexOfLang],
-			0
-		)
-	}];
-	const result = await generator.prompt(libInfoPrompts);
+	}]);
+	const isConfig = result.type === 'config';
+
+	if (!isConfig) {
+		Object.assign(result, await generator.prompt({
+			type:    'list',
+			name:    'lang',
+			message: 'Which language you want to use?',
+			choices: langs,
+			default: getValue(
+				[props, 'lang', indexOfLang],
+				0
+			)
+		}));
+	} else {
+		result.lang = 'js';
+	}
 
 	if (result.lang !== 'js') {
 		Object.assign(result, await generator.prompt([{
@@ -79,15 +89,19 @@ export default async function askForLibInfo(generator, props) {
 		result.checkSize = false;
 	}
 
-	Object.assign(result, await generator.prompt([{
-		type:    'confirm',
-		name:    'jest',
-		message: 'Do you want to run tests using Jest?',
-		default: getValue(
-			[props, 'jest'],
-			false
-		)
-	}]));
+	if (!isConfig) {
+		Object.assign(result, await generator.prompt([{
+			type:    'confirm',
+			name:    'jest',
+			message: 'Do you want to run tests using Jest?',
+			default: getValue(
+				[props, 'jest'],
+				false
+			)
+		}]));
+	} else {
+		result.jest = false;
+	}
 
 	if (result.jest) {
 		Object.assign(result, await generator.prompt([{
@@ -103,7 +117,7 @@ export default async function askForLibInfo(generator, props) {
 		result.coverage = false;
 	}
 
-	libInfoPrompts = [{
+	const libInfoPrompts = [!isConfig && {
 		type:    'confirm',
 		name:    'publishAsRoot',
 		message: 'Do you want to publish "src" directory as package root?',

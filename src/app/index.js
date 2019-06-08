@@ -80,9 +80,7 @@ export default class GeneratorTrigenLib extends Generator {
 			this.props = await prompts(this, pkgOrNot);
 		}
 
-		if (pkgOrNot) {
-			this.props.pkg = editPackageJson(pkgOrNot, this.props.pkg);
-		}
+		this.props.pkg = editPackageJson(pkgOrNot, this.props.pkg);
 	}
 
 	async writing() {

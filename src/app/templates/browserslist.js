@@ -17,3 +17,7 @@ export function render({
 			return 'extends browserslist-config-trigen\n';
 	}
 }
+
+export function test(params) {
+	return params.lang !== 'js';
+}

@@ -26,6 +26,8 @@ export function render({
 }) {
 
 	const isTS = lang === 'ts';
+	const isConfig = type === 'config';
+	const isJS = lang === 'js';
 	const isBrowser = type === 'browser';
 	const isNode = type === 'node';
 	const packageJson = {
@@ -50,7 +52,7 @@ export function render({
 		packageJson.os = pkg.os;
 	}
 
-	const publishDir = publishAsRoot
+	const publishDir = publishAsRoot || isConfig
 		? ''
 		: 'lib/';
 
@@ -70,9 +72,15 @@ export function render({
 		};
 	}
 
-	packageJson.scripts = {
-		lint: 'trigen-scripts lint'
-	};
+	if (isConfig) {
+		packageJson.scripts = {
+			lint: 'trigen-scripts lint \'**/*.js\''
+		};
+	} else {
+		packageJson.scripts = {
+			lint: 'trigen-scripts lint'
+		};
+	}
 
 	if (jest) {
 		packageJson.scripts.jest = 'trigen-scripts jest';
@@ -82,18 +90,25 @@ export function render({
 		packageJson.scripts.checkSize = 'trigen-scripts checkSize';
 	}
 
-	packageJson.scripts.test = 'trigen-scripts test';
+	if (isConfig) {
+		packageJson.scripts.test = 'trigen-scripts test \'**/*.js\'';
+	} else {
+		packageJson.scripts.test = 'trigen-scripts test';
+	}
 
 	if (isTS) {
 		packageJson.scripts['build:docs'] = 'trigen-scripts build:docs';
 	}
 
-	packageJson.scripts.start = 'trigen-scripts start';
+	if (!isJS) {
+		packageJson.scripts.start = 'trigen-scripts start';
+	}
 
 	if (publishAsRoot) {
 		packageJson.scripts.build = './scripts/buildPackage.sh';
 		packageJson.scripts.prepublishOnly = 'if [ -f .gitignore ]; then exit 1; fi';
-	} else {
+	} else
+	if (!isJS) {
 		packageJson.scripts.build = 'trigen-scripts build';
 	}
 
@@ -101,6 +116,9 @@ export function render({
 		packageJson.scripts.cleanPublish = publishAsRoot
 			? 'trigen-scripts cleanPublish ./package'
 			: 'trigen-scripts cleanPublish';
+	} else
+	if (!publishAsRoot) {
+		packageJson.scripts.prepublishOnly = 'trigen-scripts test';
 	}
 
 	if (coverage) {
@@ -112,7 +130,15 @@ export function render({
 	}
 
 	packageJson.keywords = pkg.keywords || [];
-	packageJson.dependencies = pkg.dependencies || {};
+
+	if (pkg.peerDependencies) {
+		packageJson.peerDependencies = pkg.peerDependencies;
+	}
+
+	if (pkg.dependencies) {
+		packageJson.dependencies = pkg.dependencies;
+	}
+
 	packageJson.devDependencies = scripts({
 		lang,
 		jest,
@@ -149,7 +175,7 @@ export function render({
 		Object.assign(packageJson.devDependencies, pkg.devDependencies);
 	}
 
-	if (!publishAsRoot) {
+	if (!publishAsRoot && !isConfig) {
 		packageJson.files = ['lib'];
 	}
 
