@@ -2,22 +2,34 @@ import stringify from './stringify';
 
 export const name = 'jest.config.json';
 
-export const render = () => stringify({
-	testRegex:           '/test/.*\\.spec\\.(jsx?|tsx?)$',
-	transform:           {
-		'^.+\\.(jsx?|tsx?)$': 'babel-jest'
-	},
-	collectCoverage:     true,
-	collectCoverageFrom: [
-		'src/**/*.{ts,tsx}',
-		'!**/*.d.ts',
-		'!**/node_modules/**'
-	],
-	coverageReporters:   [
-		'lcovonly',
-		'text'
-	]
-});
+export function render({
+	type
+}) {
+
+	const isBrowser = type === 'browser';
+	const testEnvironment = isBrowser ? {} : {
+		testEnvironment: 'node'
+	};
+	const jest = {
+		...testEnvironment,
+		testRegex:           '/test/.*\\.spec\\.(jsx?|tsx?)$',
+		transform:           {
+			'^.+\\.(jsx?|tsx?)$': 'babel-jest'
+		},
+		collectCoverage:     true,
+		collectCoverageFrom: [
+			'src/**/*.{js,jsx,ts,tsx}',
+			'!**/*.d.ts',
+			'!**/node_modules/**'
+		],
+		coverageReporters:   [
+			'lcovonly',
+			'text'
+		]
+	};
+
+	return stringify(jest);
+}
 
 export function test(params) {
 	return params.jest;

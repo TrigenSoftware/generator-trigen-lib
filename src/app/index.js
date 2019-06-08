@@ -77,7 +77,7 @@ export default class GeneratorTrigenLib extends Generator {
 
 			this.props = props;
 		} else {
-			this.props = await prompts(this, this.pkg, this.webman);
+			this.props = await prompts(this, pkgOrNot);
 		}
 
 		if (pkgOrNot) {

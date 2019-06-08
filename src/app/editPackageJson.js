@@ -15,7 +15,7 @@ export default function editPackageJson(projectPkg, pkgProps) {
 		[projectPkg, 'repository'],
 		[pkgProps, 'repository'],
 		''
-	);
+	).replace(/\.[^/]*$/, '');
 
 	return pkg;
 }

@@ -8,7 +8,7 @@ export const render = ({
 language: node_js
 node_js:
   - "lts/*"\
-${type === 'browser' ? '' : '\n  - "6"'}
+${type === 'browser' ? '' : '\n  - "8"'}
 cache:
   directories:
     - node_modules\

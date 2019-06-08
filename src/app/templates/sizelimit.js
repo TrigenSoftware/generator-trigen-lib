@@ -3,22 +3,29 @@ import stringify from './stringify';
 export const name = '.size-limit';
 
 export function render({
+	type,
 	rollup,
 	publishAsRoot
 }) {
 
+	const isNode = type === 'node';
 	const buildDir = publishAsRoot
 		? 'package/'
 		: 'lib/';
 	const sizelimit = [{
-		path:  `${buildDir}index.js`,
-		limit: '1 KB'
+		path:    `${buildDir}index.js`,
+		limit:   '1 KB',
+		webpack: false
 	}];
 
+	if (isNode) {
+		sizelimit[0].running = false;
+	} else
 	if (rollup) {
 		sizelimit.push({
-			path:  `${buildDir}index.es.js`,
-			limit: '1 KB'
+			path:    `${buildDir}index.es.js`,
+			limit:   '1 KB',
+			webpack: false
 		});
 	}
 

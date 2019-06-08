@@ -27,6 +27,7 @@ export function render({
 
 	const isTS = lang === 'ts';
 	const isBrowser = type === 'browser';
+	const isNode = type === 'node';
 	const packageJson = {
 		name,
 		version,
@@ -55,7 +56,7 @@ export function render({
 
 	packageJson.main = `${publishDir}index.js`;
 
-	if (rollup) {
+	if (!isNode && rollup) {
 		packageJson.module = `${publishDir}index.es.js`;
 	}
 
@@ -65,7 +66,7 @@ export function render({
 
 	if (!isBrowser) {
 		packageJson.engines = {
-			node: '>=6.0.0'
+			node: '>=8.0.0'
 		};
 	}
 
@@ -96,14 +97,14 @@ export function render({
 		packageJson.scripts.build = 'trigen-scripts build';
 	}
 
-	if (coverage) {
-		packageJson.scripts.coverage = 'cat ./coverage/lcov.info | coveralls';
-	}
-
 	if (cleanPublish) {
 		packageJson.scripts.cleanPublish = publishAsRoot
 			? 'trigen-scripts cleanPublish ./package'
 			: 'trigen-scripts cleanPublish';
+	}
+
+	if (coverage) {
+		packageJson.scripts.coverage = 'cat ./coverage/lcov.info | coveralls';
 	}
 
 	if (pkg.scripts) {
@@ -120,7 +121,9 @@ export function render({
 	}).reduce((scripts, plugin) => {
 		scripts[plugin] = scriptsVersion;
 		return scripts;
-	}, {});
+	}, {
+		'@trigen/scripts': scriptsVersion
+	});
 
 	if (isTS) {
 
