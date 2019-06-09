@@ -44,7 +44,8 @@ export function render({
 				},
 				rules:   {
 					'no-magic-numbers':     'off',
-					'max-nested-callbacks': 'off'
+					'max-nested-callbacks': 'off',
+					'no-sync':              'off'
 				}
 			};
 			break;

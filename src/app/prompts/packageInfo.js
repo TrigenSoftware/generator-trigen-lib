@@ -28,7 +28,7 @@ export default async function askForPackageInfo(generator, props, pkg) {
 			[props, 'pkg', 'version'],
 			'1.0.0'
 		),
-		validate: _ => /^\d+\.\d+\.\d+$/.test(_)
+		validate: _ => /^\d+\.\d+\.\d+(-\w+)?$/.test(_)
 	}, {
 		type:    'input',
 		name:    'description',

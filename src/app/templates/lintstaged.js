@@ -9,14 +9,27 @@ export function render({
 
 	const isConfig = type === 'config';
 	const isTS = lang === 'ts';
-	const lintstaged = isConfig ? {
-		'**/*.js': ['trigen-scripts lint:js', 'git add']
-	} : {
-		'src/**/*.{js,jsx}': ['trigen-scripts lint:js', 'git add']
-	};
+	let lintstaged = {};
 
-	if (isTS) {
-		lintstaged['src/**/*.{ts,tsx}'] = ['trigen-scripts lint:ts', 'git add'];
+	switch (true) {
+
+		case isConfig:
+			lintstaged = {
+				'**/*.js': ['trigen-scripts lint:js', 'git add']
+			};
+			break;
+
+		case isTS:
+			lintstaged = {
+				'src/**/*.{ts,tsx}': ['trigen-scripts lint:ts', 'git add']
+			};
+			break;
+
+		default:
+			lintstaged = {
+				'src/**/*.{js,jsx}': ['trigen-scripts lint:js', 'git add']
+			};
+			break;
 	}
 
 	return stringify(lintstaged);
