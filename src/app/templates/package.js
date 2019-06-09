@@ -7,6 +7,7 @@ import {
 export const name = 'package.json';
 
 export function render({
+	rewriteScripts,
 	pkg: {
 		name,
 		version,
@@ -115,7 +116,7 @@ export function render({
 		packageJson.scripts.coverage = 'cat ./coverage/lcov.info | coveralls';
 	}
 
-	if (pkg.scripts) {
+	if (pkg.scripts && !rewriteScripts) {
 		Object.assign(packageJson.scripts, pkg.scripts);
 	}
 

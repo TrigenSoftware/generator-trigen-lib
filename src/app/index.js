@@ -23,6 +23,12 @@ export default class GeneratorTrigenLib extends Generator {
 			default:     false
 		});
 
+		this.option('rewriteScripts', {
+			description: 'Rewrite scripts in package.json, without extending it',
+			alias:       'R',
+			default:     false
+		});
+
 		this.option('silent', {
 			description: 'Run generator without prompts, using defaults from .yo-rc.json',
 			alias:       'S',
@@ -86,9 +92,15 @@ export default class GeneratorTrigenLib extends Generator {
 	async writing() {
 
 		const {
+			rewriteScripts
+		} = this.options;
+		const {
 			props
 		} = this;
-		const files = render(props);
+		const files = render({
+			...props,
+			rewriteScripts
+		});
 
 		Object.entries(files).forEach(([
 			path,
