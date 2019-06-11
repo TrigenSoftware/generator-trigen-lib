@@ -166,7 +166,7 @@ export function render({
 		Object.assign(packageJson.devDependencies, pkg.devDependencies);
 	}
 
-	if (!publishAsRoot && !isConfig) {
+	if (!publishAsRoot && !isJS) {
 		packageJson.files = ['lib'];
 	}
 

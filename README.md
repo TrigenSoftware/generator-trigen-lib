@@ -7,7 +7,7 @@
 [![Greenkeeper badge][greenkeeper]][greenkeeper-url]
 
 [npm]: https://img.shields.io/npm/v/generator-trigen-lib.svg
-[npm-url]: https://www.npmjs.com/package/generator-trigen-lib
+[npm-url]: https://npmjs.com/package/generator-trigen-lib
 
 [node]: https://img.shields.io/node/v/generator-trigen-lib.svg
 [node-url]: https://nodejs.org
