@@ -9,12 +9,18 @@ export function render({
 		peerDependencies
 	},
 	type,
+	lang,
 	coverage
 }) {
 
 	const isConfig = type === 'config';
 	const isNode = type === 'node';
+	const isTS = lang === 'ts';
 	const shieldName = repository.replace(/.*\/\/[^/]*\//, '');
+	const [
+		organization,
+		project
+	] = shieldName.toLowerCase().split('/');
 
 	return `\
 # ${name}
@@ -25,7 +31,8 @@ ${!peerDependencies ? '' : '[![Peer dependencies status][peer-deps]][peer-deps-u
 [![Dependencies status][deps]][deps-url]
 [![Build status][build]][build-url]
 ${!coverage ? '' : '[![Coverage status][coverage]][coverage-url]\n'}\
-[![Greenkeeper badge][greenkeeper]][greenkeeper-url]
+[![Dependabot badge][dependabot]][dependabot-url]
+${!isTS ? '' : '[![Documentation badge][documentation]][documentation-url]\n'}\
 
 [npm]: https://img.shields.io/npm/v/${name}.svg
 [npm-url]: https://npmjs.com/package/${name}
@@ -43,7 +50,7 @@ ${!peerDependencies ? '' : `
 [deps]: https://david-dm.org/${shieldName}.svg
 [deps-url]: https://david-dm.org/${shieldName}
 
-[build]: http://img.shields.io/travis/com/${shieldName}.svg
+[build]: http://img.shields.io/travis/com/${shieldName}/master.svg
 [build-url]: https://travis-ci.com/${shieldName}
 \
 ${!coverage ? '' : `
@@ -51,8 +58,13 @@ ${!coverage ? '' : `
 [coverage-url]: https://coveralls.io/r/${shieldName}
 `}\
 
-[greenkeeper]: https://badges.greenkeeper.io/${shieldName}.svg
-[greenkeeper-url]: https://greenkeeper.io/
+[dependabot]: https://api.dependabot.com/badges/status?host=github&repo=${shieldName}
+[dependabot-url]: https://dependabot.com/
+\
+${!isTS ? '' : `
+[documentation]: https://img.shields.io/badge/API-Documentation-2b7489.svg
+[documentation-url]: https://${organization}.github.io/${project}
+`}\
 
 ${description}
 

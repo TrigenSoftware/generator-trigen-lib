@@ -4,7 +4,7 @@
 [![Node version][node]][node-url]
 [![Dependencies status][deps]][deps-url]
 [![Build status][build]][build-url]
-[![Greenkeeper badge][greenkeeper]][greenkeeper-url]
+[![Dependabot badge][dependabot]][dependabot-url]
 
 [npm]: https://img.shields.io/npm/v/generator-trigen-lib.svg
 [npm-url]: https://npmjs.com/package/generator-trigen-lib
@@ -15,11 +15,11 @@
 [deps]: https://david-dm.org/TrigenSoftware/generator-trigen-lib.svg
 [deps-url]: https://david-dm.org/TrigenSoftware/generator-trigen-lib
 
-[build]: http://img.shields.io/travis/com/TrigenSoftware/generator-trigen-lib.svg
+[build]: http://img.shields.io/travis/com/TrigenSoftware/generator-trigen-lib/master.svg
 [build-url]: https://travis-ci.com/TrigenSoftware/generator-trigen-lib
 
-[greenkeeper]: https://badges.greenkeeper.io/TrigenSoftware/generator-trigen-lib.svg
-[greenkeeper-url]: https://greenkeeper.io/
+[dependabot]: https://api.dependabot.com/badges/status?host=github&repo=TrigenSoftware/generator-trigen-lib
+[dependabot-url]: https://dependabot.com/
 
 Yeoman generator for library development.
 
