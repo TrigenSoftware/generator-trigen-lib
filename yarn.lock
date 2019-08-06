@@ -1150,9 +1150,9 @@
     lint-staged "^8.1.0"
 
 "@trigen/scripts@2", "@trigen/scripts@^2.5.0":
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/@trigen/scripts/-/scripts-2.5.0.tgz#dd02e3f1538ff59fe7c548c97ad4ec6d802a77e3"
-  integrity sha512-LssQg5Fir1WUQJoJadvpvvJZTFrTaUJ59oOHgRE/xY6qTQ3kFgzyC4ivNTwCNWeks9lin9g5Z4UxDUbMEc9MwA==
+  version "2.6.3"
+  resolved "https://registry.yarnpkg.com/@trigen/scripts/-/scripts-2.6.3.tgz#c5275f1a770c052c27412ebf269a5aaedac6e3e9"
+  integrity sha512-n84YpkKXzAx2O4BXlTtRyz8+oyIb1Se56E+1f2WvDEfBECKSL//fYpEh7nASBKBuzka5Bv1kae7srKRzT54kAQ==
   dependencies:
     "@babel/runtime" "^7.4.2"
     chalk "^2.4.2"
