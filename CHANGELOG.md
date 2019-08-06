@@ -24,6 +24,11 @@ DO NOT TOUCH. SAVE IT ON TOP.
 
 -->
 
+## [1.1.0] - 2019-08-07
+### Changed
+- Greenkeeper -> Dependabot;
+- README.md template mod.
+
 ## [1.0.0] - 2019-06-11
 ### Added
 - 🦄
