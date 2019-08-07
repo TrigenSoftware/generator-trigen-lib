@@ -1150,7 +1150,7 @@
     husky "^2.3.0"
     lint-staged "^8.1.0"
 
-"@trigen/scripts@2", "@trigen/scripts@^2.5.0", "@trigen/scripts@^2.6.3":
+"@trigen/scripts@2", "@trigen/scripts@^2.6.3":
   version "2.6.3"
   resolved "https://registry.yarnpkg.com/@trigen/scripts/-/scripts-2.6.3.tgz#c5275f1a770c052c27412ebf269a5aaedac6e3e9"
   integrity sha512-n84YpkKXzAx2O4BXlTtRyz8+oyIb1Se56E+1f2WvDEfBECKSL//fYpEh7nASBKBuzka5Bv1kae7srKRzT54kAQ==
@@ -3687,9 +3687,9 @@ eslint-plugin-import@^2.13.0:
     resolve "^1.11.0"
 
 eslint-plugin-jest@^22.6.4:
-  version "22.14.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-22.14.1.tgz#32287dade9bc0a1920c61e25a71cf11363d78015"
-  integrity sha512-mpLjhADl+HjagrlaGNx95HIji089S18DhnU/Ee8P8VP+dhEnuEzb43BXEaRmDgQ7BiSUPcSCvt1ydtgPkjOF/Q==
+  version "22.15.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-22.15.0.tgz#fe70bfff7eeb47ca0ab229588a867f82bb8592c5"
+  integrity sha512-hgnPbSqAIcLLS9ePb12hNHTRkXnkVaCfOwCt2pzQ8KpOKPWGA4HhLMaFN38NBa/0uvLfrZpcIRjT+6tMAfr58Q==
   dependencies:
     "@typescript-eslint/experimental-utils" "^1.13.0"
 
