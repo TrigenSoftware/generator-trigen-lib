@@ -3,7 +3,8 @@ import stringify from './stringify';
 export const name = 'jest.config.json';
 
 export function render({
-	type
+	type,
+	coverage
 }) {
 
 	const isBrowser = type === 'browser';
@@ -12,21 +13,26 @@ export function render({
 	};
 	const jest = {
 		...testEnvironment,
-		testRegex:           '/test/.*\\.spec\\.(jsx?|tsx?)$',
-		transform:           {
+		testRegex: '/test/.*\\.spec\\.(jsx?|tsx?)$',
+		transform: {
 			'^.+\\.(jsx?|tsx?)$': 'babel-jest'
-		},
-		collectCoverage:     true,
-		collectCoverageFrom: [
-			'src/**/*.{js,jsx,ts,tsx}',
-			'!**/*.d.ts',
-			'!**/node_modules/**'
-		],
-		coverageReporters:   [
-			'lcovonly',
-			'text'
-		]
+		}
 	};
+
+	if (coverage) {
+		Object.assign(jest, {
+			collectCoverage:     true,
+			collectCoverageFrom: [
+				'src/**/*.{js,jsx,ts,tsx}',
+				'!**/*.d.ts',
+				'!**/node_modules/**'
+			],
+			coverageReporters:   [
+				'lcovonly',
+				'text'
+			]
+		});
+	}
 
 	return stringify(jest);
 }
