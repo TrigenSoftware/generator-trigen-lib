@@ -1099,12 +1099,12 @@
     "@trigen/scripts" "^2.6.3"
     babel-preset-trigen "^2.2.1"
 
-"@trigen/scripts-plugin-eslint@2":
-  version "2.6.3"
-  resolved "https://registry.yarnpkg.com/@trigen/scripts-plugin-eslint/-/scripts-plugin-eslint-2.6.3.tgz#bfc137d81972acbb8a025f3d0a9f01406d894412"
-  integrity sha512-3gnf4PygEFEBQFKSYbGhRnrz0SAZ0lNmflDe8IwhTKm7Iqd1PRLHJUEmhRL0mu63Cj38mDvpwjn7rmApafE+TA==
+"@trigen/scripts-plugin-eslint@3":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@trigen/scripts-plugin-eslint/-/scripts-plugin-eslint-3.2.0.tgz#cffc42544771b401897a4ba055369ba1bfb65d1b"
+  integrity sha512-dCVM4jIfKEmBevRnRpe+fzB40GQEOaxJSX2gglDicXdOXKGGD6ko+JBm66yZn2P+YGqkVCu6GpvMo4hTsvl+MQ==
   dependencies:
-    "@trigen/scripts" "^2.6.3"
+    "@trigen/scripts" "^3.2.0"
     eslint "^5.15.3"
     eslint-config-trigen "^3.2.3"
 
@@ -1150,10 +1150,22 @@
     husky "^2.3.0"
     lint-staged "^8.1.0"
 
-"@trigen/scripts@2", "@trigen/scripts@^2.5.0", "@trigen/scripts@^2.6.3":
+"@trigen/scripts@2", "@trigen/scripts@^2.6.3":
   version "2.6.3"
   resolved "https://registry.yarnpkg.com/@trigen/scripts/-/scripts-2.6.3.tgz#c5275f1a770c052c27412ebf269a5aaedac6e3e9"
   integrity sha512-n84YpkKXzAx2O4BXlTtRyz8+oyIb1Se56E+1f2WvDEfBECKSL//fYpEh7nASBKBuzka5Bv1kae7srKRzT54kAQ==
+  dependencies:
+    "@babel/runtime" "^7.4.2"
+    chalk "^2.4.2"
+    core-js "3"
+    immutability-helper "^3.0.0"
+    rcfile "^1.0.3"
+    resolve-cwd "^3.0.0"
+
+"@trigen/scripts@^3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@trigen/scripts/-/scripts-3.2.0.tgz#9bc4cb29e56eafa915593f6dca878b5065efb7d9"
+  integrity sha512-bYgqjaaiyWlFqR9lsC58As2+MUhyHJ0T/96/GDbN3TtxAnXWKIRwuy7u6HYOXO9gq3T+HoMy0V6FEIELfnFFZA==
   dependencies:
     "@babel/runtime" "^7.4.2"
     chalk "^2.4.2"
