@@ -38,7 +38,7 @@
     "yosay": "^2.0.2"
   },
   "devDependencies": {
-    "@trigen/scripts": "2",
+    "@trigen/scripts": "3",
     "@trigen/scripts-plugin-eslint": "2",
     "@trigen/scripts-plugin-jest": "2",
     "@trigen/scripts-plugin-babel": "2",
