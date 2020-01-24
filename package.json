@@ -38,15 +38,16 @@
     "yosay": "^2.0.2"
   },
   "devDependencies": {
+    "@size-limit/preset-small-lib": "^3.0.0",
     "@trigen/scripts": "2",
-    "@trigen/scripts-plugin-eslint": "2",
-    "@trigen/scripts-plugin-jest": "2",
     "@trigen/scripts-plugin-babel": "2",
+    "@trigen/scripts-plugin-eslint": "4",
+    "@trigen/scripts-plugin-jest": "2",
     "@trigen/scripts-plugin-rollup": "4",
-    "@trigen/scripts-preset-lib": "2",
     "@trigen/scripts-plugin-size-limit": "2",
-    "rollup-plugin-eslint": "^6.0.0",
-    "eslint-plugin-jest": "^22.6.4"
+    "@trigen/scripts-preset-lib": "2",
+    "eslint-plugin-jest": "^22.6.4",
+    "rollup-plugin-eslint": "^6.0.0"
   },
   "files": [
     "generators"
