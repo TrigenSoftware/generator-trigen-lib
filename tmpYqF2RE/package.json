@@ -1,0 +1,33 @@
+{
+  "name": "generator-trigen-lib",
+  "version": "2.0.2",
+  "description": "Yeoman generator for library development.",
+  "author": "dangreen",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TrigenSoftware/generator-trigen-lib"
+  },
+  "bugs": {
+    "url": "https://github.com/TrigenSoftware/generator-trigen-lib/issues"
+  },
+  "main": "generators/app/index.js",
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "keywords": [
+    "trigen",
+    "lib",
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "@babel/runtime": "^7.4.5",
+    "chalk": "^3.0.0",
+    "core-js": "3",
+    "yeoman-generator": "^4.0.1",
+    "yosay": "^2.0.2"
+  },
+  "files": [
+    "generators"
+  ]
+}
