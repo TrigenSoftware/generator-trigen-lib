@@ -18,7 +18,7 @@ ${
 		? 'import tslint from \'rollup-plugin-tslint\';\n'
 		: 'import { eslint } from \'rollup-plugin-eslint\';\n'
 }\
-import commonjs from 'rollup-plugin-commonjs';
+import commonjs from '@rollup/plugin-commonjs';
 ${!isTS ? '' : 'import typescript from \'rollup-plugin-typescript2\';\n'}\
 import babel from 'rollup-plugin-babel';
 ${!isTS ? '' : 'import { DEFAULT_EXTENSIONS } from \'@babel/core\';\n'}\
