@@ -24,6 +24,10 @@ DO NOT TOUCH. SAVE IT ON TOP.
 
 -->
 
+## [2.0.0] - 2020-01-24
+### Changed
+- trigen-scripts 4.0
+
 ## [1.1.0] - 2019-08-07
 ### Changed
 - Greenkeeper -> Dependabot;
