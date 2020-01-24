@@ -18,7 +18,7 @@ export function getValue(...values) {
 					tres = key(tres);
 					counter++;
 				} else
-				if (tres && tres.hasOwnProperty(key)) {
+				if (tres && Reflect.has(tres, key)) {
 					tres = tres[key];
 					counter++;
 				} else {
