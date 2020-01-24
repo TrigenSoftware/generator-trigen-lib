@@ -1,10 +1,12 @@
 /* eslint-disable import/unambiguous */
 const path = require('path');
 const fs = require('fs');
-const { execSync } = require('child_process');
+const {
+	execSync
+} = require('child_process');
 const chalk = require('chalk');
 const del = require('del');
-// Constants
+
 const YO_RC = '.yo-rc.json';
 const SANDBOX_PATH = path.join(__dirname, 'sandbox');
 const LIB_PATH = path.join(SANDBOX_PATH, 'my-lib');
@@ -44,8 +46,6 @@ try {
 		cwd:   SANDBOX_PATH
 	});
 
-} catch (err) {
-	throw err;
 } finally {
 
 	if (!shouldLeave) {
