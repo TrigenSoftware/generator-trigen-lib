@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@trigen/scripts": "2",
-    "@trigen/scripts-plugin-eslint": "2",
+    "@trigen/scripts-plugin-eslint": "4",
     "@trigen/scripts-plugin-jest": "2",
     "@trigen/scripts-plugin-babel": "2",
     "@trigen/scripts-plugin-rollup": "4",
