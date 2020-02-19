@@ -69,7 +69,7 @@ export function render({
 
 	if (!isBrowser) {
 		packageJson.engines = {
-			node: '>=8.0.0'
+			node: '>=10.0.0'
 		};
 	}
 
