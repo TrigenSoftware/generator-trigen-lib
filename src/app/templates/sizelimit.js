@@ -18,10 +18,7 @@ export function render({
 		webpack: false
 	}];
 
-	if (isNode) {
-		sizelimit[0].running = false;
-	} else
-	if (rollup) {
+	if (!isNode && rollup) {
 		sizelimit.push({
 			path:    `${buildDir}index.es.js`,
 			limit:   '1 KB',
