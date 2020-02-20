@@ -162,6 +162,11 @@ export function render({
 		}
 	}
 
+	if (checkSize) {
+		packageJson.devDependencies['@size-limit/preset-small-lib'] = '^4.0.0';
+		packageJson.devDependencies['size-limit'] = '^4.0.0';
+	}
+
 	if (pkg.devDependencies) {
 		Object.assign(packageJson.devDependencies, pkg.devDependencies);
 	}
