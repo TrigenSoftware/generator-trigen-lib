@@ -9850,9 +9850,9 @@ yeoman-environment@^2.3.4:
     untildify "^3.0.3"
 
 yeoman-generator@^4.0.1:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/yeoman-generator/-/yeoman-generator-4.4.0.tgz#182c992509d4b7512a6bbe17c0dfdf7e52953344"
-  integrity sha512-Z+eMdeyKuhbgnghhONh+xv+YztccJLgCQ8dOogq/9oLJAU/+D7oOdpLK/UryEoJQd5merJIDgCedVIxhtPsV2g==
+  version "4.7.1"
+  resolved "https://registry.yarnpkg.com/yeoman-generator/-/yeoman-generator-4.7.1.tgz#6be462b89b7878d8e1b980fac19f05c34f23608c"
+  integrity sha512-fd59uoi+lWRoBJp8rW7ELoDj9eCj4jhu97U2XUU59o3G1OQc+n4exzrpg6RxOAg4qpEBlaNqIDBOXzPqPL5/uQ==
   dependencies:
     async "^2.6.2"
     chalk "^2.4.2"
