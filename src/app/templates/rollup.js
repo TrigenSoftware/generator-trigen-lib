@@ -9,19 +9,16 @@ export function render({
 	const isNode = type === 'node';
 	const isTS = lang === 'ts';
 
-	return `\
-import {
-	external
-} from '@trigen/scripts-plugin-rollup/helpers';
+	return `import {\n\texternal\n} from '@trigen/scripts-plugin-rollup/helpers';
 ${
 	isTS
 		? 'import tslint from \'rollup-plugin-tslint\';\n'
-		: 'import { eslint } from \'rollup-plugin-eslint\';\n'
+		: 'import {\n\teslint\n} from \'rollup-plugin-eslint\';\n'
 }\
 import commonjs from '@rollup/plugin-commonjs';
 ${!isTS ? '' : 'import typescript from \'rollup-plugin-typescript2\';\n'}\
 import babel from 'rollup-plugin-babel';
-${!isTS ? '' : 'import { DEFAULT_EXTENSIONS } from \'@babel/core\';\n'}\
+${!isTS ? '' : 'import {\n\tDEFAULT_EXTENSIONS\n} from \'@babel/core\';\n'}\
 import pkg from './package.json';
 
 const plugins = [
