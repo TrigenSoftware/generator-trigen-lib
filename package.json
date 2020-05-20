@@ -31,9 +31,8 @@
     "yeoman-generator"
   ],
   "dependencies": {
-    "@babel/runtime": "^7.4.5",
+    "@babel/runtime-corejs3": "^7.9.6",
     "chalk": "^4.0.0",
-    "core-js": "3",
     "yeoman-generator": "^4.0.1",
     "yosay": "^2.0.2"
   },
