@@ -11,15 +11,16 @@ export function render({
 	const babel = {
 		exclude: 'node_modules/**',
 		presets: [
-			'babel-preset-trigen'
+			['babel-preset-trigen', {
+				env: 'lib'
+			}]
 		]
 	};
 
 	if (jest) {
 
 		const presetOptions = {
-			targets:  { node: 'current' },
-			commonjs: true
+			env: 'jest'
 		};
 
 		if (isTS) {
