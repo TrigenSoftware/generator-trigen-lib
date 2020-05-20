@@ -1339,12 +1339,13 @@
     "@trigen/scripts" "^5.1.0"
     size-limit "^4.1.1"
 
-"@trigen/scripts-preset-lib@4":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@trigen/scripts-preset-lib/-/scripts-preset-lib-4.0.0.tgz#7d0ab5bc01c2c317d307b8ef1f429b34b9664693"
-  integrity sha512-+ctvD+kvKS+XIwkIRMOoZdtNafVR/O5b6RLtXIYtwoslRm6dWxSrdj2VO4Q7xbcq2TAFic4NwZWtzk/YZyClZg==
+"@trigen/scripts-preset-lib@5":
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/@trigen/scripts-preset-lib/-/scripts-preset-lib-5.5.0.tgz#96dc0fce1ea4912f7c1ea7d2930fbf496fd5134c"
+  integrity sha512-eSsZhg+ROalCRApXBBznkst9BStYHTl5B9X7MxSpjicPixZta/VVgpNI8d4/LCrMc2B34PFnMP3Y1i8L1R54Gg==
   dependencies:
-    "@trigen/scripts" "^4.0.0"
+    "@babel/runtime-corejs3" "^7.9.6"
+    "@trigen/scripts" "^5.5.0"
     browserslist-config-trigen "^1.1.0"
     clean-publish "^1.1.0"
     coveralls "^3.0.0"
