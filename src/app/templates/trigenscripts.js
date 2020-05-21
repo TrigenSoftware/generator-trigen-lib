@@ -1,7 +1,7 @@
 import stringify from './stringify';
 
 export const name = '.trigenscriptsrc';
-export const scriptsVersion = '^5.5.0';
+export const scriptsVersion = '^6.0.0';
 
 export function scripts({
 	type,

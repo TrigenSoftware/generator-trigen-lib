@@ -17,7 +17,7 @@ ${
 }\
 import commonjs from '@rollup/plugin-commonjs';
 ${!isTS ? '' : 'import typescript from \'rollup-plugin-typescript2\';\n'}\
-import babel from 'rollup-plugin-babel';
+import babel from '@rollup/plugin-babel';
 ${!isTS ? '' : 'import {\n\tDEFAULT_EXTENSIONS\n} from \'@babel/core\';\n'}\
 import pkg from './package.json';
 
@@ -41,10 +41,12 @@ ${isTS ? `\
 			'ts',
 			'tsx'
 		],
-		runtimeHelpers: true
+		babelHelpers:       'runtime',
+		skipPreflightCheck: true
 	})` : `\
 	babel({
-		runtimeHelpers: true
+		babelHelpers:       'runtime',
+		skipPreflightCheck: true
 	})`
 }
 ];
